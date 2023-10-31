@@ -1,8 +1,10 @@
+import Header from "./Components/Header/Header"
+import './App.css'
 function App() {
 
   return (
     <>
-      <h1 className="text-6xl bg-red-300">Hello</h1>
+     <Header></Header>
     </>
   )
 }
