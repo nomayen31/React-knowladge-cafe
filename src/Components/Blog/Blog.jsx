@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react';
 import {  FaBookmark } from 'react-icons/fa';
 
-const Blog = ({blog}) => {
+const Blog = ({blog,handleAddToBookmark}) => {
     const {title, cover,reading_time,author_img,posted_date,author, hashtags } = blog;
     console.log(blog);
 
@@ -20,7 +20,7 @@ const Blog = ({blog}) => {
                 </div>
                 <div className='flex gap-4'>
                     <span>{reading_time} min read</span>
-                    <span className='mt-1'><FaBookmark></FaBookmark></span>
+                    <span onClick={()=>handleAddToBookmark()} className='mt-1'><FaBookmark></FaBookmark></span>
                 </div>
             </div>
             <h2 className='text-4xl mt-4 mb-4 leading-relaxed tracking-widest'>{title}</h2>
