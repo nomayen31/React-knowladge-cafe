@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import BookMark from '../BookMark/BookMark';
 
@@ -11,8 +12,8 @@ const BookMarks = ({bookmarks,readingTime}) => {
             <h2 className='text-2xl text-center'>BookMarked Blogs: {bookmarks.length}</h2>
 
             {
-                bookmarks.map(bookmark => <BookMark
-                key={bookmark.id}
+                bookmarks.map((bookmark, idx) => <BookMark
+                key={idx}
                 bookmark={bookmark}
                 ></BookMark>)
             }

@@ -3,7 +3,7 @@ import React from 'react';
 import {  FaBookmark } from 'react-icons/fa';
 
 const Blog = ({blog,handleAddToBookmark, handleMarkAsRead}) => {
-    const {title, cover,reading_time,author_img,posted_date,author, hashtags } = blog;
+    const {title, cover,reading_time,author_img,posted_date,author, hashtags, id } = blog;
     // console.log(blog);
 
     return (
@@ -29,7 +29,7 @@ const Blog = ({blog,handleAddToBookmark, handleMarkAsRead}) => {
                     hashtags.map((hash, idx) => <span key={idx}><a href=""># {hash} .  </a></span>)
                 }
             </p>
-            <button onClick={()=>handleMarkAsRead(reading_time)} className='text-purple-600 font-bold underline mt-2'>Mark As read</button>
+            <button onClick={()=>handleMarkAsRead(reading_time, id)} className='text-purple-600 font-bold underline mt-2'>Mark As read</button>
         </div>
     );
 };
@@ -37,6 +37,6 @@ const Blog = ({blog,handleAddToBookmark, handleMarkAsRead}) => {
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
     handleAddToBookmark:PropTypes.func
-}
+} 
 
 export default Blog;
