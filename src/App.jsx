@@ -7,7 +7,8 @@ function App() {
   const [bookmarks, setBookmarks] = useState([]);
 
   const handleAddToBookmark = (blog) =>{
-      console.log('bookmark adding soon');
+     const newBookMarks = [...bookmarks, blog]
+     setBookmarks(newBookMarks)
   }
 
   return (
@@ -15,7 +16,7 @@ function App() {
      <Header></Header>
      <div className="md:flex max-w-7xl mx-auto">
       <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
-      <BookMarks></BookMarks>
+      <BookMarks bookmarks={bookmarks}></BookMarks>
      </div>
     </>
   )
